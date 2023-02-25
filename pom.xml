@@ -146,6 +146,11 @@
         </dependency>
 
         <dependency>
+            <groupId>ir.pdn.portal</groupId>
+            <artifactId>pdn-portal-mirror-asset</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <scope>provided</scope>
