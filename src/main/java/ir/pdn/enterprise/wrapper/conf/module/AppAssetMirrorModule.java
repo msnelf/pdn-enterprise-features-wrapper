@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Primary;
 
 @Configuration
 @Primary
-public class AddAssetMirrorModule extends AssetMirrorModule {
+public class AppAssetMirrorModule extends AssetMirrorModule {
 
     @Override
     public String schema() {

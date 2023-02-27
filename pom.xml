@@ -151,6 +151,11 @@
             <version>1.0.0</version>
         </dependency>
         <dependency>
+            <groupId>ir.pdn.enterprise.features</groupId>
+            <artifactId>pdn-enterprise-features-meeting</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <scope>provided</scope>
