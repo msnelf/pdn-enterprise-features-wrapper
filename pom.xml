@@ -25,6 +25,11 @@
         </dependency>
         <dependency>
             <groupId>ir.pdn.enterprise.features</groupId>
+            <artifactId>pdn-enterprise-features-filemanager</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>ir.pdn.enterprise.features</groupId>
             <artifactId>pdn-enterprise-features-role-management</artifactId>
             <version>1.0.0</version>
         </dependency>
@@ -156,6 +161,11 @@
             <version>1.0.0</version>
         </dependency>
         <dependency>
+            <groupId>ir.pdn.enterprise.features</groupId>
+            <artifactId>pdn-enterprise-features-survey</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <scope>provided</scope>
@@ -165,6 +175,11 @@
             <groupId>com.unboundid</groupId>
             <artifactId>unboundid-ldapsdk</artifactId>
             <version>6.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>ir.pdn.tools</groupId>
+            <artifactId>pdn-tools-notification-magfa-implementor</artifactId>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.ldap</groupId>

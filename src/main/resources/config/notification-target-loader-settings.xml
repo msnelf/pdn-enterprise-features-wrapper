@@ -1,0 +1,31 @@
+<TargetLoaderSetting>
+
+    <defaultTargetLoader value="saba-loader" classImplementorValue="Saba_Implementor"/>
+    <targetLoaders>
+        <targetLoader value="magfa-loader" receive="true" classImplementorValue="Magfa_Implementor"/>
+        <targetLoader value="saba-loader" classImplementorValue="Saba_Implementor"/>
+    </targetLoaders>
+
+
+
+    <targetImplementors>
+        <targetImplementor value="Magfa_Implementor" className="ir.pdn.tools.notification.implementor.magfa.service.impl.MagfaImplementor">
+            <acceptParameters>
+                <acceptParameter parameter="username" defaultValue="payaneh_604848" required="true" />
+                <acceptParameter parameter="password" defaultValue="UZwWoTmAOIV8CMhN" required="true" />
+                <acceptParameter parameter="domain" defaultValue="pdn" required="true" />
+                <acceptParameter parameter="sender_number" defaultValue="3000604848" required="true" />
+            </acceptParameters>
+        </targetImplementor>
+
+        <targetImplementor value="Saba_Implementor" className="ir.pdn.tools.notification.implementor.saba.service.SabaImplementor">
+
+            <acceptParameters>
+                <acceptParameter parameter="restUrl" defaultValue="https://console.balonet.net/public/api/v1/broadcastMessage/text" required="true" />
+                <acceptParameter parameter="token" defaultValue="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ7XCJ3aGl0ZUJyYW5kSWRcIjo1NDAsXCJjcmVhdGVkRGF0ZVwiOjE2NTU1MzkxNjcxNzh9IiwiZXhwIjoxNjg3MDc1MTY3fQ.OtM8zDoONVZsaGZjUL_eD52zYzW_qdbuePr7gBRJwylpOYMKV-0hM9pqx9hT-KxCkft1lKuRD73OZMhL-_P5HA" required="true" />
+
+            </acceptParameters>
+        </targetImplementor>
+    </targetImplementors>
+
+</TargetLoaderSetting>

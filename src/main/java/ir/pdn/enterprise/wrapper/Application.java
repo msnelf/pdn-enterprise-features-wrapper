@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.ApplicationPidFileWriter;
 import org.springframework.context.ConfigurableApplicationContext;
 
-@SpringBootApplication(exclude = {})
+@SpringBootApplication()
 public class Application {
 
 
