@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portal-config
+  namespace: portal-app
+data:
+  db_url: "jdbc:oracle:thin:@oracle-server.org:1521:orcl"
+  scheduler_db_url: "jdbc:oracle:thin:@oracle-server.org:1521:orcl"
+  dll_auto: "update"
+  sso_server_host_url: "http://pdnsso:7020"
+  sso_user: "sso"
+  sso_password: "sso"
+  sso_app_user: "portal"
+  sso_app_password: "portal"

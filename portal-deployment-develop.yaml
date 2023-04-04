@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portal-backend-develop
+  namespace: portal-app
+  labels:
+    app: portal-backend-develop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portal-backend-develop
+  template:
+    metadata:
+      labels:
+        app: portal-backend-develop
+    spec:
+      containers:
+        - name: portal-backend-develop
+          image: registry.pdnco.ir/portal-backend:1.0.0
+          ports:
+            - name: http
+              containerPort: 8090
+              protocol: TCP
+            - name: debug-port
+              containerPort: 5005
+              protocol: TCP
+          env:
+            - name: DB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: portal-config
+                  key: db_url
+            - name: SCHEDULER_DB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: portal-config
+                  key: scheduler_db_url
+            - name: DLL_AUTO
+              valueFrom:
+                configMapKeyRef:
+                  name: portal-config
+                  key: dll_auto
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: portal-db-secret
+                  key: db_username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: portal-db-secret
+                  key: db_password
+            - name: JAVA_OPTS
+              value: "-agentlib:jdwp=transport=dt_socket,address=*:5005,server=y,suspend=n"
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: portal-backend-develop
+  namespace: portal-app
+  labels:
+    name: portal-backend-develop
+spec:
+  type: NodePort
+  ports:
+    - name: debug-port
+      protocol: TCP
+      port: 5005
+      nodePort: 30055
+      targetPort: 5005
+    - name: http
+      port: 7020
+      protocol: TCP
+      nodePort: 30056
+      targetPort: 8090
+
+  selector:
+    app: portal-backend-develop

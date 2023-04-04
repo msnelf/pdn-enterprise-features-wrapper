@@ -1,0 +1,42 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portal-app
+  namespace: portal-app
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: portal.pdnco.org
+      http:
+        paths:
+          - backend:
+              service:
+                name: portal-ui-prod
+                port:
+                  number: 7010
+            path: /
+            pathType: Prefix
+          - backend:
+              service:
+                name: portal-backend-prod
+                port:
+                  number: 7020
+            path: /service
+            pathType: Prefix
+    - host: next-portal.pdnco.org
+      http:
+        paths:
+          - backend:
+              service:
+                name: portal-ui-develop
+                port:
+                  number: 7010
+            path: /
+            pathType: Prefix
+          - backend:
+              service:
+                name: portal-backend-develop
+                port:
+                  number: 7020
+            path: /service
+            pathType: Prefix
